@@ -47,16 +47,21 @@ html{
 }
 body{
     display: grid;
+    grid-template-rows:9.7rem 1fr;
     grid-template-columns:30rem 1fr;
+    grid-template-areas: 'logo header'
+                          'sidebar content';
+    
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .aside{
-    height: 100vh;
+    height: calc(100vh - 9.7rem);
     display: flex;
     flex-direction: column;
     background-color: var(--color-light-white);
     border-right: 1px var(--color-lines-light) solid;
+    grid-area: sidebar;
     
 }
 
@@ -68,6 +73,8 @@ body{
         margin: 3.4rem ;
         height: 2.5rem;
         width: 15.2rem;
+        grid-area:"logo";
+        border-right: 1px var(--color-lines-light) solid inset;
 
     }
     &__nav-list{
@@ -133,6 +140,7 @@ main{
     background-color: var(--color-light-grey);
 }
 .header{
+    grid-area: "header";
     display: flex;
     height:9.7rem;
     background-color: var(--color-light-white);
@@ -205,4 +213,56 @@ main{
     &__text{
         padding-left: 1.5rem;
     }
+}
+.main{
+    grid-area: content;
+    width:calc(100vw - 30rem);
+    height:calc(100vh - 9.7rem);
+    overflow: scroll;
+    display: flex;
+    column-gap: 2.4rem;
+    // scrollbar-width: 0px;
+    &__column{
+      margin: 2.7rem 0;
+      width: 28rem;  
+      min-width: 28rem;
+      display: flex;
+      flex-direction: column;
+      row-gap: 2rem;
+      &:is(:first-child){
+        margin-left: 2.4rem;
+      }
+      &--blank{
+        height: 90vh;
+        background: linear-gradient(180deg, #E9EFFA 0%, rgba(233, 239, 250, 0.5) 100%);
+        border-radius: 6px;
+        margin-top: 3.9rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include heading-xl();
+        color: var(--color-medium-grey);
+      }
+    }
+}
+.card{
+    background-color: var(--color-light-white);
+    padding: 2.3rem 1.6rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
+    &__title{
+        @include heading-m();
+    }
+    &__content{
+        margin-top: .8rem;
+        color:var(--color-medium-grey);
+        @include body-m();
+
+    }
+}
+.column__title{
+    margin-bottom: 4px;
+    @include heading-s();
+    color:var(--color-medium-grey);
+
 }

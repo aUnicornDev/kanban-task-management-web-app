@@ -18,16 +18,19 @@ html {
 
 body {
   display: grid;
+  grid-template-rows: 9.7rem 1fr;
   grid-template-columns: 30rem 1fr;
+  grid-template-areas: "logo header" "sidebar content";
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .aside {
-  height: 100vh;
+  height: calc(100vh - 9.7rem);
   display: flex;
   flex-direction: column;
   background-color: var(--color-light-white);
   border-right: 1px var(--color-lines-light) solid;
+  grid-area: sidebar;
 }
 
 .navbar {
@@ -39,6 +42,8 @@ body {
   margin: 3.4rem;
   height: 2.5rem;
   width: 15.2rem;
+  grid-area: "logo";
+  border-right: 1px var(--color-lines-light) solid inset;
 }
 .navbar__nav-list {
   width: 27.6rem;
@@ -104,6 +109,7 @@ main {
 }
 
 .header {
+  grid-area: "header";
   display: flex;
   height: 9.7rem;
   background-color: var(--color-light-white);
@@ -174,4 +180,65 @@ main {
 }
 .hide-sidebar__text {
   padding-left: 1.5rem;
+}
+
+.main {
+  grid-area: content;
+  width: calc(100vw - 30rem);
+  height: calc(100vh - 9.7rem);
+  overflow: scroll;
+  display: flex;
+  -moz-column-gap: 2.4rem;
+       column-gap: 2.4rem;
+}
+.main__column {
+  margin: 2.7rem 0;
+  width: 28rem;
+  min-width: 28rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+}
+.main__column:is(:first-child) {
+  margin-left: 2.4rem;
+}
+.main__column--blank {
+  height: 90vh;
+  background: linear-gradient(180deg, #E9EFFA 0%, rgba(233, 239, 250, 0.5) 100%);
+  border-radius: 6px;
+  margin-top: 3.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  line-height: 3rem;
+  font-weight: 700;
+  color: var(--color-medium-grey);
+}
+
+.card {
+  background-color: var(--color-light-white);
+  padding: 2.3rem 1.6rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(54, 78, 126, 0.101545);
+}
+.card__title {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: 700;
+}
+.card__content {
+  margin-top: 0.8rem;
+  color: var(--color-medium-grey);
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+}
+
+.column__title {
+  margin-bottom: 4px;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  font-weight: 700;
+  color: var(--color-medium-grey);
 }/*# sourceMappingURL=style.css.map */
