@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+*,*::before, *::after{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --color-light-grey:#F4F7FD;
+    --color-light-white:#FFFFFF;
+    --color-medium-grey:#828FA3;
+    --color-main-purple:#635FC7;
+    --color-lines-light:#E4EBFA;
+}
+html{
+    font-size: 62.5%;
+
+}
+@mixin heading-xl{
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: 700;
+}
+@mixin heading-l{
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    font-weight: 700;
+}
+@mixin heading-m{
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    font-weight: 700;
+}
+@mixin heading-s{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+@mixin body-l{
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    font-weight: 500;
+}
+@mixin body-m{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+}
+body{
+    display: grid;
+    grid-template-columns:30rem 1fr;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.aside{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-light-white);
+    border-right: 1px var(--color-lines-light) solid;
+    
+}
+
+.navbar{
+    display: flex;
+    flex-direction: column;
+    &__logo{
+        align-items: flex-start;
+        margin: 3.4rem ;
+        height: 2.5rem;
+        width: 15.2rem;
+
+    }
+    &__nav-list{
+        width:27.6rem;
+    }
+    &__nav-list-title{
+        font-weight: 700;
+        font-size: 1.2rem;
+        padding-left: 3.2rem;
+        height:3.4rem;
+        display: block;
+        color:var(--color-medium-grey);
+        letter-spacing: 2.4px;
+        margin-top: 2rem;
+    }
+    &__nav-item{
+        height: 4.8rem;
+        padding-left: 3.2rem;
+        display: flex;
+        align-items: center;
+        gap:1.6rem;
+        color:var(--color-medium-grey);
+        @include heading-m;
+        &__icon{
+            padding-top: 2px;
+        }
+        &--active{
+            background-color: var(--color-main-purple);
+            border-radius: 0 2.4rem 2.4rem 0;
+            color:var(--color-light-white);
+        }
+        &--active path{
+            fill: var(--color-light-white);
+        }
+        &--new{
+            color:var(--color-main-purple);
+        }
+        &--new path{
+            fill:var(--color-main-purple);
+        }
+        &:hover{
+            cursor: pointer;
+            background-color: var(--color-medium-grey);
+            border-radius: 0 2.4rem 2.4rem 0;
+            color:var(--color-light-white);
+            
+        }
+        &:hover path{
+            fill:var(--color-light-white);
+        }
+        &--new:hover{
+            cursor: pointer;
+            background-color:transparent;
+            color:var(--color-main-purple);
+        }
+        &--new:hover path{
+            fill:var(--color-main-purple);
+        }
+    }
+
+}
+main{
+    background-color: var(--color-light-grey);
+}
+.header{
+    display: flex;
+    height:9.7rem;
+    background-color: var(--color-light-white);
+    align-items: center;
+    padding: 0 2.4rem;
+    border-bottom: 1px var(--color-lines-light) solid;
+    &__new-task{
+        margin-left: auto;
+        margin-right: 2.4rem;
+    }
+    &__options{
+        margin-right: .8rem;
+    }
+
+}
+.btn{
+   height: 4.8rem;
+   padding:0  2.5rem;
+   border-radius: 2.4rem;
+   border:none; 
+   background-color: var(--color-main-purple);
+   color:var(--color-light-white);
+   
+   @include heading-m();
+
+}
+.theme-box{
+    width: 25.1rem;
+    height: 4.8rem;
+    display: flex;
+    background-color: var(--color-light-grey);
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    margin-top:auto;
+    align-self: center;
+    &__switch{
+
+    }
+}
+.switch{
+    &__container{
+        width: 3.2rem;
+        height: 1.4rem;
+        border-radius: 2rem;
+        background-color: var(--color-main-purple);
+        display: flex;
+        border: 3px var(--color-main-purple) solid;
+        justify-content: flex-start;
+        margin: 0 2.37rem;
+    }
+    &__circle{
+        width: 1.4rem;
+        height: 1.4rem;
+        background-color: var(--color-light-white);
+        border-radius: 50%;
+    }
+}
+.hide-sidebar{
+    width: 25.1rem;
+    height: 4.8rem;
+    display: flex;
+    align-items: center;
+    @include heading-m;
+    padding-left: 3.2rem;
+    margin-top: 6px;
+    margin-bottom: 3.4rem;
+    
+    color:var(--color-medium-grey);
+    &__text{
+        padding-left: 1.5rem;
+    }
+}
