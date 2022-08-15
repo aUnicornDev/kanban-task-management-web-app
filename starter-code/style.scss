@@ -10,6 +10,7 @@
     --color-medium-grey:#828FA3;
     --color-main-purple:hsl(242, 48%, 58%);
     --color-lines-light:#E4EBFA;
+    --color-red:#EA5555;
 }
 html{
     font-size: 62.5%;
@@ -40,6 +41,11 @@ html{
     font-size: 1.3rem;
     line-height: 2.3rem;
     font-weight: 500;
+}
+@mixin body-lb{
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+    font-weight: 700;
 }
 @mixin body-m{
     font-size: 1.2rem;
@@ -182,11 +188,20 @@ main{
    background-color: var(--color-main-purple);
    color:var(--color-light-white);
    
-   @include heading-m();
+   @include body-lb();
    &--light{
-    background: rgba(99, 95, 199, 0.1);
-    color: var(--color-main-purple);
-   }
+       background: rgba(99, 95, 199, 0.1);
+       color: var(--color-main-purple);
+    }
+    &--danger{
+        background-color: var(--color-red);
+    }
+    &__full{
+        width: 20rem;
+    }
+    &__large{
+        @include heading-m();
+    }
 
 }
 .theme-box{
@@ -311,6 +326,9 @@ main{
         }
         &__title{
             @include heading-l();
+            &--danger{
+                color:var(--color-red);
+            }
         }
         &__content{
             // margin: 2.4rem 0;
@@ -341,6 +359,10 @@ main{
                 position: absolute;
                 right:1.6rem;
             }
+        }
+        &__buttons{
+            display: flex;
+            justify-content: space-between;
         }
     }
     &__subtask-list{

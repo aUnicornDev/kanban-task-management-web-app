@@ -10,6 +10,7 @@
   --color-medium-grey:#828FA3;
   --color-main-purple:hsl(242, 48%, 58%);
   --color-lines-light:#E4EBFA;
+  --color-red:#EA5555;
 }
 
 html {
@@ -132,13 +133,24 @@ main {
   border: none;
   background-color: var(--color-main-purple);
   color: var(--color-light-white);
-  font-size: 1.5rem;
-  line-height: 1.9rem;
+  font-size: 1.3rem;
+  line-height: 2.3rem;
   font-weight: 700;
 }
 .btn--light {
   background: rgba(99, 95, 199, 0.1);
   color: var(--color-main-purple);
+}
+.btn--danger {
+  background-color: var(--color-red);
+}
+.btn__full {
+  width: 20rem;
+}
+.btn__large {
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  font-weight: 700;
 }
 
 .theme-box {
@@ -275,6 +287,9 @@ main {
   line-height: 2.3rem;
   font-weight: 700;
 }
+.modal__card__title--danger {
+  color: var(--color-red);
+}
 .modal__card__content {
   color: var(--color-medium-grey);
   font-size: 1.3rem;
@@ -307,6 +322,10 @@ main {
   background-position: 50% 50%;
   position: absolute;
   right: 1.6rem;
+}
+.modal__card__buttons {
+  display: flex;
+  justify-content: space-between;
 }
 .modal__subtask-list {
   margin-top: 1.6rem;
