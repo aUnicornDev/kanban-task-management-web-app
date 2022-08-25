@@ -5,12 +5,12 @@
     padding: 0;
 }
 :root{
-    --color-light-grey:#F4F7FD;
-    --color-light-white:#FFFFFF;
-    --color-medium-grey:#828FA3;
-    --color-main-purple:hsl(242, 48%, 58%);
-    --color-lines-light:#E4EBFA;
-    --color-red:#EA5555;
+    --color-light-grey:rgb(244, 247, 253);
+    --color-light-white:rgb(255, 255, 255);
+    --color-medium-grey:rgb(130, 143, 163);
+    --color-main-purple:rgb(100, 96, 199);
+    --color-lines-light:rgb(228, 235, 250);
+    --color-red:rgb(234, 85, 85);
 }
 html{
     font-size: 62.5%;
